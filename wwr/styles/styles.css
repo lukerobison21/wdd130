@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans=|Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+/*heading-font: "IM Fell French Canon";
+  --paragraph-font: Lato, Helvetica, sans-serif;*/
+  .home-title {
+    font-family: 'IM Fell French Canon';
+    font-size: 2em;
+    margin-top: 10px;
+}
+.msg h2 {
+    font-family: 'IM Fell French Canon';
+}
+.msg {
+    line-height: 1.5em;
+    padding: 35px;
+  }
+
+.join{
+    padding: 15px 30px;
+  }
+.msg p{
+    font-size: .8em;
+    padding-bottom: 15px;
+}
 div{
     max-width: 1600px;
     margin: 0 auto;
@@ -9,22 +32,36 @@ div{
     height: 725px;
 }
 body {
-    
+    height: 80%;
     background-color:#BDBEA9;
+    font-family: Lato, Helvetica, sans-serif;
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 header {
     background-color: #303633; 
+    width: 100%;
+    text-align: center;
 }
 .home-title{
-    color: white;
+    color: #303633;
+}
+h2 {
+    margin: 0;
 }
 h4{
     color: #DE541E;
+}
+#logo_link{
+       padding-top: 5px;
 }
 nav a {
     text-align: center;
     color: #DE541E;
     text-decoration: none;
+    padding: 35px;
 }
 nav a:hover {
     background-color: #DE541E;
@@ -42,16 +79,30 @@ nav a:hover {
 main section{
     text-align: center;
 }
+main section img {
+    box-sizing: border-box;
+}
 .icon {
     width: 80px;
+    padding-top: 10px;
 }
-.book{
+.book {
     color: #DE541E;
     text-decoration: none;
+    font-size: 18px;
+    padding: 15px 30px;
+    margin-top: 50px;
+    border-radius: 5px;
+    border-color:white;
 }
 .join{
     color: #DE541E;
     text-decoration: none;
+    font-size: 18px;
+    padding: 15px 30px;
+    margin-top: 50px;
+    border-radius: 5px;
+    border-color:white;
 }
 .book:hover{
     color: #4B88A2;
@@ -65,8 +116,22 @@ main section{
 .msg p{
     color: #DE541E;
 }
+.rivers-card{
+        margin: 200px 0;
+        border: 10px solid #DE541E;
+} 
+.camping-card{
+        margin: 200px 0;
+        border: 10px solid #DE541E;
+}
+.rapids-card{
+       margin: 200px 0;
+       border: 10px solid #DE541E;
+}
 footer{
     color: #DE541E;
+    padding: 25px 50px;
+    margin-top: 200px;
 }
 footer a{
     color: #DE541E;
@@ -80,4 +145,7 @@ footer p {
 }  
 footer p a:hover {
     text-decoration: underline;
-}      
+}    
+footer .social img{
+       padding-top: 15px;  
+}

@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+}
+
+main img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid #000; /* Change the color and width as needed */
+    object-fit: cover;
+    
+}
