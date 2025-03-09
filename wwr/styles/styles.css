@@ -206,7 +206,7 @@ main section img {
     box-shadow: 5px 5px 10px #7e7664;
 }
 .mountains {
-    width: 100%;
+    width: 80%;
     grid-column: 2/7;
     grid-row: 5/8;
     box-shadow: 5px 5px 10px #7e7664;
@@ -269,7 +269,8 @@ main section img {
         width: 60%;
     }
     .river-card { 
-        width: 100%;
+        margin: 50px auto;
+        width: 60%;
     }
     #background {
         display: none;
