@@ -27,6 +27,7 @@ footer .social img  { padding-top: 15px;}
 .home-title  { margin-top: 10px;}
 .book, .join  { margin-top: 50px;}
 .rivers-card, .camping-card, .rapids-card {  margin: 200px 0;}
+.river-card{  margin: 200px 0;}
 footer  { margin-top: 200px;}
 #content {
     max-width : 1600px;
@@ -184,6 +185,7 @@ main section img {
 }
 .rivers-card {grid-area: 2/2/3/4;}
 .camping-card {grid-area: 2/5/3/7;}
+.river-card {grid-area: 1/11/1/11;}
 .rapids-card {grid-area: 2/8/3/10;}
 #background {grid-area: 4/1/9/11;}
 .mountains {grid-area: 5/2/8/7}
@@ -266,6 +268,9 @@ main section img {
         margin: 50px auto;
         width: 60%;
     }
+    .river-card { 
+        width: 100%;
+    }
     #background {
         display: none;
     }
@@ -277,4 +282,7 @@ main section img {
     footer {
         margin-top: 25px;
     }
-}
+    /*rivers css*/
+    h5 {
+        text-align: center;
+    }
