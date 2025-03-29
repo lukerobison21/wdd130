@@ -9,6 +9,53 @@ body{
     margin: 0;
     padding: 0;
 }
+.flip-card {
+    vertical-align: middle;
+    background-color: transparent;
+    width: 750px;
+    height: 750px;
+    border: 200px solid #552669;
+    margin: 100px auto 0;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    vertical-align: middle;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: #8C1917;
+    color: white;
+    transform: rotateY(180deg);
+  }
 h2 {
     margin: 0;
 }
@@ -107,6 +154,21 @@ footer a{
 footer a:hover{
     color: #537A5A;
 }
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container img {
+    width: 500px; /* Adjust as needed */
+    height: auto;
+}
+.container .text {
+    margin: 0 20px; /* Space between text and images */
+    font-size: 200px;
+    text-align: center;
+}
+
 .icon {
     width: 80px;
 }
@@ -342,4 +404,3 @@ main section img {
     .moveDown {
         margin-top: 3em;
     }
-                        
