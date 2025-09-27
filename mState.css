@@ -42,3 +42,10 @@ p {
   margin: 20px auto; 
   display: block; 
 }
+body.dark {
+  background-color: #000000;
+  color: #006EB6;
+}
+body.dark h2 {
+  color:#A0D4ED
+}
