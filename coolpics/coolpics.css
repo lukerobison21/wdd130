@@ -1,0 +1,152 @@
+/* ---------------------------------- */
+/* Import fonts */
+/* ---------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
+
+/* ---------------------------------- */
+/* CSS Variables (Colors & Fonts) */
+/* ---------------------------------- */
+:root {
+  --primary-color: #52489c;
+  --secondary-color: #59c3c3;
+  --text-dark: #333;
+  --text-light: #ebebeb;
+  --primary-font: Arial, Helvetica, sans-serif;
+  --secondary-font: "Mooli", sans-serif;
+}
+
+/* ---------------------------------- */
+/* Global Styles */
+/* ---------------------------------- */
+body {
+  font-family: var(--primary-font);
+  font-size: 1.2em;
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: var(--secondary-font);
+  margin: 0.5em 0;
+}
+
+a:link,
+a:visited {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* ---------------------------------- */
+/* Header */
+/* ---------------------------------- */
+header {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* stack elements vertically */
+  align-items: center;    /* center horizontally */
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+header nav {
+  display: none; /* hidden on mobile by default */
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+header button {
+  background: none;
+  border: none;
+  font-size: 1em;
+  color: var(--text-light);
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------------------------------- */
+/* Main Content */
+/* ---------------------------------- */
+main h2 {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* ---------------------------------- */
+/* Gallery */
+/* ---------------------------------- */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile-first 1 column */
+  gap: 0.5rem;
+  padding: 1rem;
+  justify-content: center; /* centers the grid */
+  margin: 0 auto;          /* center the container */
+}
+
+figure {
+  margin: 0;
+}
+
+.gallery img {
+  display: block;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  margin: 0 auto; /* center image inside figure */
+}
+
+/* ---------------------------------- */
+/* Footer */
+/* ---------------------------------- */
+footer {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  text-align: left;
+  padding: 1rem;
+}
+
+/* ---------------------------------- */
+/* Media Queries */
+/* ---------------------------------- */
+
+/* Medium screens (>=700px) */
+@media screen and (min-width: 700px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 1rem;
+  }
+}
+
+/* Large screens (>=1000px) */
+@media screen and (min-width: 1000px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  /* Show nav links horizontally and hide the menu button */
+  header nav {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    color: var(--text-light);
+  }
+
+  header button {
+    display: none; /* hide mobile menu button */
+  }
+}
