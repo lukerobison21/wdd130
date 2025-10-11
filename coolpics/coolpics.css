@@ -97,7 +97,36 @@ main h2 {
 figure {
   margin: 0;
 }
+.menu {
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    }
+.menu a {
+     color: inherit; text-decoration: none; 
+    }
 
+.hide { 
+    display: none; 
+}
+.menu-button {
+  background: none;
+  border: none;
+  font-size: 1em;
+  color: var(--text-light);
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+/* Stack links vertically on small screens */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
 .gallery img {
   display: block;
   width: 250px;
@@ -137,16 +166,18 @@ footer {
     padding: 2rem;
   }
 
-  /* Show nav links horizontally and hide the menu button */
+  /* Show nav links horizontally on large screens */
   header nav {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    justify-content: center;
-    color: var(--text-light);
+    display: flex;              /* make links visible and side-by-side */
+    flex-direction: row;        /* arrange them horizontally */
+    gap: 2rem;                  /* space between each link */
+    justify-content: center;    /* center them in the header */
+    text-decoration: underline;
   }
 
+  /* Hide the menu button on large screens */
   header button {
-    display: none; /* hide mobile menu button */
+    display: none;
   }
 }
+
