@@ -187,6 +187,12 @@ footer {
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
     gap: 1rem;
   }
+   header nav {              /* make links visible and side-by-side */
+    flex-direction: row;        /* arrange them horizontally */
+    gap: 2rem;                  /* space between each link */
+    justify-content: center;    /* center them in the header */
+    text-decoration: underline;
+  }
 }
 
 /* Large screens (>=1000px) */
