@@ -9,10 +9,9 @@ body {
 
 /* Header */
 header {
-  text-align: center;
+  text-align: center;           
   border-bottom: 1px solid #e2c7a2;
   margin-bottom: 20px;
-  position: relative;
   padding: 10px 0;
 }
 
@@ -22,14 +21,14 @@ header h1 {
 }
 
 nav {
-  position: absolute;
-  top: 10px;
-  right: 20px;
+  text-align: right;            
+  margin-top: 10px;             
+  padding-right: 20px;          
 }
 
 nav ul {
   list-style: none;
-  display: flex;
+  display: inline-flex;          
   gap: 20px;
   margin: 0;
   padding: 0;
@@ -46,40 +45,52 @@ main {
   display: grid;
   grid-template-columns: 1fr 300px;
   gap: 20px;
-  max-width: 1000px;
-  margin: auto;
+  max-width: 900px;           /* matches navbar width restriction */
+  margin: 0 auto;              /* centers the main area */
   padding: 0 20px;
+  align-items: stretch;
 }
 
 /* Posts section */
 .posts {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 0; /* removes white gaps between posts */
 }
 
 .post {
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 150px 1fr;
+  align-items: start; /* keeps date and content aligned */
   border-top: 1px solid #e2c7a2;
-  padding-top: 20px;
+  padding: 20px 0; /* keep even vertical spacing */
+  margin: 0; /* removes unwanted spacing */
 }
 
+
+/* Left column: date and details */
 .post-date {
-  text-align: right;
-  font-size: 0.9rem;
+  text-align: right;            /* right-aligned text */
+  font-size: 1rem;              /* increased font size */
   color: #444;
-  padding-right: 10px;
+  line-height: 1.2;             /* reduced line spacing slightly */
+  border-right: 1px solid #e2c7a2; /* right border */
+  padding: 0 10px;  
+  margin: 0;            /* space left & right of border */
 }
 
+.date {
+  font-size: 1.5rem;
+}
+/* Right column: content */
 .post-content h2 {
   color: #8b0000;
-  margin-top: 0;
+  margin-top: 0.3em;           /* aligns better with date */
 }
 
 .post-content img {
   display: block;
-  margin: 10px 0;
+  margin: 10px auto;           /* centers image horizontally */
   width: 150px;
   border: 1px solid #ddd;
 }
@@ -96,9 +107,13 @@ main {
 
 /* Sidebar */
 .sidebar {
-  border-left: 1px solid #e2c7a2;
-  padding-left: 20px;
+  border: 1px solid #e2c7a2; /* adds border on all sides */
+  padding: 20px;             /* even padding inside the box */
+  margin-left: 10px;         /* optional spacing from posts */
+  background-color: #fffaf8; /* keeps it consistent with page */
+  border-radius: 4px;   
 }
+
 
 .sidebar p {
   font-style: italic;
@@ -124,5 +139,8 @@ main {
 
   .post-date {
     text-align: left;
+    border-right: none;
+    padding: 0;
   }
+  
 }
