@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credit Card Form</title>
+  <style>
+    body {
+      /* Adjusted font and background color to more closely match the image */
+      font-family: 'Courier New', monospace; /* Using monospace for the text style in the image */
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem; /* Space between card area and submit button */
+    }
+
+    /* Card container to hold both sides */
+    .card-container {
+      display: grid;
+      position: relative;
+      width: 380px; /* Slightly wider card for better spacing */
+      height: 240px; /* Taller card */
+    }
+
+    /* Both front and back use same grid area */
+    .card-front,
+    .card-back {
+      grid-area: 1 / 1;
+      border-radius: 6px; /* Slightly less rounded corners */
+      background: #d8d8d8; /* Card color */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      box-sizing: border-box;
+      /* Reset grid for card elements */
+      display: block; 
+    }
+
+    .card-front {
+      z-index: 2;
+      /* 🔥 CHANGE 1: Reduced translation to expose more of the back card */
+      transform: translate(10px, 10px); 
+    }
+
+    .card-back {
+      background: #e6e6e6; /* Lighter back card color */
+      z-index: 1;
+    }
+
+    /* Content styling for the front card */
+    .card-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      /* 🔥 CHANGE 2: Increased vertical gap to fix Card Number label overlap */
+      gap: 1.5rem;
+    }
+
+    .total {
+      font-weight: bold;
+      grid-column: span 1;
+      margin: 0;
+      font-size: 1.1rem;
+      align-self: start;
+    }
+
+    .card-icon {
+      grid-column: 2 / 3;
+      justify-self: end;
+      align-self: start;
+      width: 40px;
+      height: 25px;
+      background: #fe8657; /* Icon color */
+      border-radius: 4px;
+      margin-bottom: 1.5rem; /* Spacing below the icon */
+      /* Card Icon Overlap Style (Orange rectangle with slight box shadow) */
+      border: 1px solid #e0744e;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    }
+    
+    .input-group {
+      grid-column: span 2;
+      margin-bottom: 1rem;
+    }
+
+    .card-number {
+      /* Full width for card number field */
+      grid-column: span 2; 
+    }
+
+    .card-holder-group,
+    .expiration-group {
+      grid-column: span 1; /* These are side-by-side */
+    }
+
+    label {
+      font-size: 0.9rem;
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #333;
+    }
+
+    input {
+      width: calc(100% - 14px); /* Full width minus padding and border */
+      padding: 8px 6px;
+      border: 1px solid #999;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-family: 'Courier New', monospace;
+      font-size: 1rem;
+      background: white;
+    }
+
+    .exp-inputs {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .exp-inputs input {
+      width: 50px; /* Fixed width for MM and YY fields */
+      text-align: center;
+      padding: 8px 4px;
+    }
+
+
+    /* Card Back specific styling */
+    .black-strip {
+      background: #333;
+      height: 40px;
+      margin: 0 -1.5rem 2rem -1.5rem; /* Full width strip */
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+
+    .cvc-section {
+      text-align: right;
+      /* 🔥 CHANGE 3: Increased margin-top to push CVC field into the newly visible area */
+      margin-top: 80px;
+    }
+
+    .cvc-section label {
+      text-align: left;
+    }
+    
+    .cvc-field-wrap {
+      display: flex;
+      justify-content: flex-end; /* Align the CVC field to the right */
+    }
+
+    .cvc-field-wrap input {
+      width: 60px; /* CVC field width */
+      text-align: center;
+    }
+
+    /* Submit Button styling */
+    .submit-btn {
+      background: #f4f4f4; /* Light gray button */
+      color: #333;
+      padding: 10px 20px;
+      border: 1px solid #999;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      /* Position to match the image, outside the card container */
+      align-self: flex-end; 
+      margin-right: -10px; /* Minor alignment adjustment */
+    }
+
+    .submit-btn:hover {
+      background: #e0e0e0;
+    }
+
+    /* The temporary .card-number-label class and negative margin were removed */
+
+  </style>
+</head>
+<body>
+
+<form class="payment-form">
+  <div class="card-container">
+    <div class="card card-back">
+      <div class="black-strip"></div>
+      <div class="cvc-section">
+        <label for="cvc">CVC/CVV</label>
+        <div class="cvc-field-wrap">
+          <input
+            type="text"
+            id="cvc"
+            name="cvc"
+            placeholder="XXX"
+            maxlength="3"
+            required
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="card card-front">
+      <div class="card-content">
+        <p class="total">TOTAL: $199</p>
+        <div class="card-icon"></div> 
+        
+        <div class="input-group card-number">
+          <label for="cardNumber">CARD NUMBER</label>
+          <input
+            type="text"
+            id="cardNumber"
+            name="cardNumber"
+            placeholder="1234 5678 9101 1020"
+            maxlength="19"
+            required
+          />
+        </div>
+
+        <div class="input-group card-holder-group">
+          <label for="cardName">CARD HOLDER</label>
+          <input
+            type="text"
+            id="cardName"
+            name="cardName"
+            placeholder="John Doe"
+            required
+          />
+        </div>
+
+        <div class="input-group expiration-group">
+          <label for="expMonth">EXPIRATION</label>
+          <div class="exp-inputs">
+            <input
+              type="text"
+              id="expMonth"
+              name="expMonth"
+              placeholder="MM"
+              maxlength="2"
+              required
+            />
+            <input
+              type="text"
+              id="expYear"
+              name="expYear"
+              placeholder="YY"
+              maxlength="2"
+              required
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="submit-btn">Submit</button>
+</form>
+
+</body>
+</html>
