@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RecipeBook</title>
     <link rel="stylesheet" type="text/css" href="recipes.css" />
+    
     <meta property="og:title" content="Page Title">
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Book of Recipes" />
     <meta property="og:image" content="https://lukerobison.github.io/recipes/index.html/images/recipe-book.png" />
     <meta property="og:url" content="lukerobison.github.io/recipes/index.html">
-    <meta name="twitter:card" content="summary_large_image"></meta>
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body>
 
     <header>
         <div class="logo-wrap">
-        <img src="images/recipe-book.png" class="logo" />
-        <h1>My Recipes</h1>
+            <img src="images/recipe-book.png" class="logo" />
+            <h1>My Recipes</h1>
         </div>
     </header>
-
 
     <!-- Search Bar -->
     <div class="search-container">
@@ -30,29 +30,8 @@
     </div>
 
     <main>
-
-        <!-- RECIPE CARD -->
-        <section class="recipe-card">
-
-            <img src="images/apple-crisp.jpg" alt="Apple Crisp">
-
-            <div class="recipe-content">
-                <span class="tag">dessert</span>
-
-                <h2>Apple Crisp</h2>
-
-                <span class="rating" role="img" aria-label="4 out of 5 stars">
-                    ⭐⭐⭐⭐☆
-                </span>
-
-                <p class="description">
-                    This apple crisp recipe is a simple yet delicious fall dessert
-                    that’s great served warm with vanilla ice cream.
-                </p>
-            </div>
-
-        </section>
-
+        <!-- JS will dynamically insert recipe cards here -->
+        <div id="recipes"></div>
     </main>
 
     <footer>
@@ -66,7 +45,6 @@
         </a>
     </footer>
 
-    <script src="main.js"></script>
-    <script type="module" src="recipes.mjs"></script>
+     <script type="module" src="main.js"></script>    
 </body>
 </html>
