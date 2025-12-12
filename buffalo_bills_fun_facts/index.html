@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="images/favicon-32x32.png" />
+  <meta charset="utf-8" />
+  <title>Buffalo Bills Fan Tracker</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container" id="home-root">
+    <header class="header" role="banner">
+      <img src="images/bills_logo.png" alt="Buffalo Bills Logo" class="logo" />
+      <h1 class="site-title">Buffalo Bills Fan Tracker</h1>
+      <nav>
+        <a href="players.html" class="secondary-btn">All Players</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="featured-title">
+        <div class="hero-media" aria-hidden="true">
+          <img src="" alt="featured player" />
+        </div>
+        <div class="hero-body">
+          <div>
+            <h2 id="featured-title">Featured Player</h2>
+            <p id="featured-player-name" style="font-weight:700; font-size:1.2rem;">Player Name</p>
+            <p>Welcome to the Buffalo Bills Fan Tracker! Stay updated with the latest team news, player spotlights, and game info.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="cta-row" role="region" aria-label="Next game countdown">
+        <button id="countdown-btn" class="countdown-btn">
+            Next Game in <span id="countdown-display">00:00:00</span>
+        </button>
+      </div>
+
+      <!-- Favorites section -->
+      <section id="top-player" aria-label="Favorite players">
+        <h2 class="site-title center">My Favorite Players</h2>
+        <div id="top-player-cards" class="players-grid"></div> <!-- Cards appended here -->
+      </section>
+
+      <footer>
+        <p>© 2025 Buffalo Bills Fan Tracker</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
